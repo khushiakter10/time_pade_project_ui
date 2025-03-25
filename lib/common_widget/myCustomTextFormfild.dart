@@ -2,6 +2,8 @@ import 'package:anytimetp_app/gen/colors.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../gen/assets.gen.dart';
+
 class MyCustomTextFormWidget extends StatelessWidget {
   final TextStyle? textStyle;
   final TextEditingController? controller;
@@ -65,9 +67,9 @@ class MyCustomTextFormWidget extends StatelessWidget {
     return TextFormField(
       controller: controller,
       decoration: InputDecoration(
-        suffixIcon: suffixIcon,
+        suffixIcon: suffixIcon?? Image.asset(Assets.images.dog.path,height: 24.h,),
         prefixIcon: prefixIcon,
-        hintText: hintTxt,
+        hintText: hintTxt?? 'khusi',
         hintStyle: hinStyle?.copyWith(color: Colors.red),
         labelText: labelText,
         labelStyle: labelTextStyle,

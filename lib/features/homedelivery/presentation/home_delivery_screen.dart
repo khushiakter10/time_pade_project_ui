@@ -93,7 +93,7 @@ class _HomeDeliveryScreenState extends State<HomeDeliveryScreen> {
                 UIHelper.horizontalSpace(130.w),
                 GestureDetector(
                   onTap: (){
-                    NavigationService.navigateTo(Routes.forgotPasswordScreen);
+                    NavigationService.navigateTo(Routes.burgerScreen);
                   },
                     child: Text('See All',style: TextFontStyle.headline32343Ew400text13.copyWith(fontSize: 16.sp))),
                 UIHelper.horizontalSpace(10.w),
@@ -152,41 +152,22 @@ class _HomeDeliveryScreenState extends State<HomeDeliveryScreen> {
             UIHelper.verticalSpace(20.h),
             Row(
               children: [
-                GestureDetector(
-                  onTap: (){
-                    NavigationService.navigateTo(Routes.restaurantScreen);
-                  },
-                    child: Text('Open Restaurants',style: TextFontStyle.headline32343Ew400text13.copyWith(fontSize: 20.sp))),
+                Text('Open Restaurants',style: TextFontStyle.headline32343Ew400text13.copyWith(fontSize: 20.sp)),
                 UIHelper.horizontalSpace(100.w),
                 Text('See All',style: TextFontStyle.headline32343Ew400text13.copyWith(fontSize: 16.sp)),
                 UIHelper.horizontalSpace(10.w),
-                GestureDetector(
-                  onTap: (){
-                    NavigationService.navigateTo(Routes.searchScreen);
-                  },
-                    child: SvgPicture.asset(Assets.icons.lefticon,height: 11.h,))
+                SvgPicture.asset(Assets.icons.lefticon,height: 11.h,)
               ],
             ),
             UIHelper.verticalSpace(20.h),
-            GestureDetector(
-              onTap: (){
-                NavigationService.navigateTo(Routes.searchScreen);
-              },
+            GestureDetector(onTap: (){NavigationService.navigateTo(Routes.burgerScreen);},
               child: Container( padding: EdgeInsets.symmetric(vertical: 90.h),
                 decoration: BoxDecoration(image: DecorationImage(image: AssetImage(Assets.images.happywek.path))),),
             ),
             UIHelper.verticalSpace(20.h),
-            GestureDetector(
-              onTap: (){
-                NavigationService.navigateTo(Routes.restaurantScreen);
-              },
-                child: Text('rose garden restaurant',style: TextFontStyle.headline32343Ew400text13.copyWith(fontSize: 20.sp))),
+            Text('rose garden restaurant',style: TextFontStyle.headline32343Ew400text13.copyWith(fontSize: 20.sp)),
             UIHelper.verticalSpace(20.h),
-            GestureDetector(
-              onTap: (){
-                NavigationService.navigateTo(Routes.burgerScreen);
-              },
-                child: Text('Burger - Chiken - Riche - Wings',style: TextFontStyle.headlineA0A5BAw400text14,)),
+            Text('Burger - Chiken - Riche - Wings',style: TextFontStyle.headlineA0A5BAw400text14,),
             UIHelper.verticalSpace(20.h),
             Row(
               children: [
@@ -205,9 +186,11 @@ class _HomeDeliveryScreenState extends State<HomeDeliveryScreen> {
               ],
             ),
             UIHelper.verticalSpace(20.h),
-            Container( padding: EdgeInsets.symmetric(vertical: 90.h),
-              decoration: BoxDecoration(
-                  image: DecorationImage(image: AssetImage(Assets.images.happywek.path))
+            GestureDetector(onTap: (){NavigationService.navigateTo(Routes.burgerScreen);},
+              child: Container( padding: EdgeInsets.symmetric(vertical: 90.h),
+                decoration: BoxDecoration(
+                    image: DecorationImage(image: AssetImage(Assets.images.happywek.path))
+                ),
               ),
             ),
           ],

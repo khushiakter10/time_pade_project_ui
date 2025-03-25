@@ -1,5 +1,5 @@
 import 'dart:io';
-import 'package:anytimetp_app/features/card/presentation/Message_screen.dart';
+import 'package:anytimetp_app/features/card/presentation/message_screen.dart';
 import 'package:anytimetp_app/features/card/presentation/add_to_card_screen.dart';
 import 'package:anytimetp_app/features/card/presentation/edit_card_screen.dart';
 import 'package:anytimetp_app/features/card/presentation/payment_method_screen.dart';
@@ -9,6 +9,9 @@ import '../features/auth/presentation/locationaccess_screen.dart';
 import '../features/auth/presentation/log_in_screen.dart';
 import '../features/auth/presentation/sign_up_screen.dart';
 import '../features/auth/presentation/verification_screen.dart';
+import '../features/card/presentation/calling_screen.dart';
+import '../features/card/presentation/master_card_screen.dart';
+import '../features/card/presentation/traking_screen.dart';
 import '../features/home/presentation/home_screen.dart';
 import '../features/homedelivery/presentation/burger_screen.dart';
 import '../features/homedelivery/presentation/categorise_screen.dart';
@@ -65,6 +68,12 @@ final class Routes {
   static const String paymentMethodScreen = '/paymentMethodScreen';
   static const String addCardScreen = '/addCardScreen';
   static const String messageScreen = '/messageScreen';
+  static const String orderTrackingScreen = '/orderTrackingScreen';
+  static const String callingScreen = '/callingScreen';
+  static const String masterCardScreen = '/masterCardScreen';
+
+
+
 }
 
 final class RouteGenerator {
@@ -209,10 +218,10 @@ case Routes.addNewAdressScreen:
             ? _FadedTransitionRoute(widget: const AddNewAdressScreen(), settings: settings)
             : CupertinoPageRoute(builder: (context) => const AddNewAdressScreen());
 
-// case Routes.editCardScreen:
-//         return Platform.isAndroid
-//             ? _FadedTransitionRoute(widget: const EditCardScreen(), settings: settings)
-//             : CupertinoPageRoute(builder: (context) => const EditCardScreen());
+case Routes.editCardScreen:
+        return Platform.isAndroid
+            ? _FadedTransitionRoute(widget: const EditCardScreen(), settings: settings)
+            : CupertinoPageRoute(builder: (context) => const EditCardScreen());
 
 case Routes.paymentMethodScreen:
         return Platform.isAndroid
@@ -228,6 +237,21 @@ case Routes.messageScreen:
         return Platform.isAndroid
             ? _FadedTransitionRoute(widget: const MessageScreen(), settings: settings)
             : CupertinoPageRoute(builder: (context) => const MessageScreen());
+
+case Routes.orderTrackingScreen:
+        return Platform.isAndroid
+            ? _FadedTransitionRoute(widget: const OrderTrackingScreen(), settings: settings)
+            : CupertinoPageRoute(builder: (context) => const OrderTrackingScreen());
+
+case Routes.callingScreen:
+        return Platform.isAndroid
+            ? _FadedTransitionRoute(widget: const CallingScreen(), settings: settings)
+            : CupertinoPageRoute(builder: (context) => const CallingScreen());
+
+case Routes.masterCardScreen:
+        return Platform.isAndroid
+            ? _FadedTransitionRoute(widget: const MasterCardScreen(), settings: settings)
+            : CupertinoPageRoute(builder: (context) => const MasterCardScreen());
 
 
 

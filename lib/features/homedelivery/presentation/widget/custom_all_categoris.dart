@@ -3,11 +3,13 @@ import 'package:anytimetp_app/helpers/ui_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../constants/text_font_style.dart';
+
 class CustomAllCategorisewidget extends StatelessWidget {
   final Widget image;
   final String name;
   final String price;
-  final TextStyle titleTextStyle;
+
   final TextStyle starttextStyle;
   final TextStyle dataStyle;
 
@@ -16,7 +18,7 @@ class CustomAllCategorisewidget extends StatelessWidget {
     required this.image,
     required this.name,
     required this.price,
-    required this.titleTextStyle,
+
     required this.starttextStyle,
     required this.dataStyle,
   });
@@ -55,7 +57,7 @@ class CustomAllCategorisewidget extends StatelessWidget {
           UIHelper.verticalSpace(10.h),
           Text(
             name,
-            style: titleTextStyle,
+            style: TextFontStyle.headline32343Ew700text14,
           ),
           UIHelper.verticalSpace(4.h),
           Text(

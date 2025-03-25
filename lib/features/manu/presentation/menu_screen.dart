@@ -1,13 +1,14 @@
+import 'package:anytimetp_app/constants/text_font_style.dart';
 import 'package:anytimetp_app/features/manu/presentation/widget/custom_personal_widget.dart';
+import 'package:anytimetp_app/gen/assets.gen.dart';
+import 'package:anytimetp_app/gen/colors.gen.dart';
 import 'package:anytimetp_app/helpers/all_routes.dart';
 import 'package:anytimetp_app/helpers/navigation_service.dart';
+import 'package:anytimetp_app/helpers/ui_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import '../../../constants/text_font_style.dart';
-import '../../../gen/assets.gen.dart';
-import '../../../gen/colors.gen.dart';
-import '../../../helpers/ui_helpers.dart';
+
 class MenuScreen extends StatefulWidget {
   const MenuScreen({super.key});
 
@@ -20,16 +21,17 @@ class _MenuScreenState extends State<MenuScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.cFFFFFF,
-      body: SingleChildScrollView(
-        padding: EdgeInsets.symmetric(vertical: 50.h, horizontal: 15.w),
+      body: SingleChildScrollView( padding: EdgeInsets.symmetric(vertical: 50.h, horizontal: 15.w),
         child: Column(
           children: [
             Row(
               children: [
-                CircleAvatar(
-                  radius: 22.r,
-                  backgroundColor: AppColors.cECF0F4,
-                  child: SvgPicture.asset(Assets.icons.back, height: 45.h),
+                GestureDetector( onTap: (){NavigationService.goBack;},
+                  child: CircleAvatar(
+                    radius: 22.r,
+                    backgroundColor: AppColors.cECF0F4,
+                    child: SvgPicture.asset(Assets.icons.back, height: 45.h),
+                  ),
                 ),
                 UIHelper.horizontalSpace(10.w),
                 Text(

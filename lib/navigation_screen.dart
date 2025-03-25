@@ -4,9 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'features/home/presentation/home_screen.dart';
 import 'features/report/presentation/productivity_screen.dart';
-import 'features/timer/presentation/finish_screen.dart';
-import 'features/timer/presentation/practice.dart';
-import 'features/timer/presentation/rassion_screen.dart';
 import 'features/timer/presentation/timer_screen.dart';
 import 'gen/assets.gen.dart';
 import 'gen/colors.gen.dart';
@@ -44,7 +41,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
   @override
   void initState() {
     super.initState();
-    // _currentIndex = widget.pageNum ?? 0;
+
   }
 
   @override
@@ -71,7 +68,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
         }
       }
     }
-    // ignore: no_leading_underscores_for_local_identifiers
+
 
     return WillPopScope(
         onWillPop: () async {

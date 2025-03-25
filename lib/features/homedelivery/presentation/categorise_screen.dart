@@ -19,11 +19,11 @@ class _CategoriseScreenState extends State<CategoriseScreen> {
   int? selectedChipIndex;
   String? selectedValue;
   List<String> items = ['Health', 'Food', 'Lifestyle', 'Sports', 'Nature'];
-  final List<Map<String, dynamic>> foodItems = const [
+  final List<Map<String, dynamic>> foodItems =  [
     {
       "name": "Pizza",
       "price": "70",
-      "image": "assets/images/pizza.jpg",
+      "image": Assets.images.dog.path,
     },
     {
       "name": "Burger",
@@ -120,20 +120,19 @@ class _CategoriseScreenState extends State<CategoriseScreen> {
                   ),
                 ),
                 UIHelper.verticalSpace(10.h),
-                Row(
-                  children: [
-                    Text('All Categories',style: TextFontStyle.headline32343Ew400text13.copyWith(fontSize: 20.sp)),
-                    UIHelper.horizontalSpace(130.w),
-                    Text('See All',style: TextFontStyle.headline32343Ew400text13.copyWith(fontSize: 16.sp)),
-                    UIHelper.horizontalSpace(10.w),
-                    SvgPicture.asset(Assets.icons.lefticon,height: 11.h,)
-                  ],
+                GestureDetector(onTap: (){NavigationService.navigateTo(Routes.foodDetailsScreen);},
+                  child: Row(
+                    children: [
+                      Text('All Categories',style: TextFontStyle.headline32343Ew400text13.copyWith(fontSize: 20.sp)),
+                      UIHelper.horizontalSpace(130.w),
+                      Text('See All',style: TextFontStyle.headline32343Ew400text13.copyWith(fontSize: 16.sp)),
+                      UIHelper.horizontalSpace(10.w),
+                      SvgPicture.asset(Assets.icons.lefticon,height: 11.h,)
+                    ],
+                  ),
                 ),
                 UIHelper.verticalSpace(20.h),
-                GestureDetector(
-                  onTap: (){
-                    NavigationService.navigateTo(Routes.burgerScreen);
-                  },
+                GestureDetector(onTap: (){NavigationService.navigateTo(Routes.foodDetailsScreen);},
                   child: SizedBox(
                     height: 150.h,
                     child: ListView.builder(
@@ -148,7 +147,6 @@ class _CategoriseScreenState extends State<CategoriseScreen> {
                             item["image"],
                             fit: BoxFit.cover,
                           ),
-                          titleTextStyle: TextFontStyle.headline32343Ew700text14,
                           starttextStyle: TextFontStyle.headline646982w400text16
                               .copyWith(fontSize: 14.sp),
                           dataStyle: TextFontStyle.headline32343Ew400text13
@@ -169,21 +167,14 @@ class _CategoriseScreenState extends State<CategoriseScreen> {
                   ],
                 ),
                 UIHelper.verticalSpace(20.h),
-                GestureDetector(
-                  onTap: (){
-                    NavigationService.navigateTo(Routes.homeDeliveryScreen);
-                  },
+                GestureDetector(onTap: (){NavigationService.navigateTo(Routes.foodDetailsScreen);},
                   child: Container( padding: EdgeInsets.symmetric(vertical: 90.h),
                     decoration: BoxDecoration(image: DecorationImage(image: AssetImage(Assets.images.happywek.path))),),
                 ),
                 UIHelper.verticalSpace(20.h),
                 Text('rose garden restaurant',style: TextFontStyle.headline32343Ew400text13.copyWith(fontSize: 20.sp)),
                 UIHelper.verticalSpace(20.h),
-                GestureDetector(
-                  onTap: (){
-                    NavigationService.navigateTo(Routes.burgerScreen);
-                  },
-                    child: Text('Burger - Chiken - Riche - Wings',style: TextFontStyle.headlineA0A5BAw400text14,)),
+                Text('Burger - Chiken - Riche - Wings',style: TextFontStyle.headlineA0A5BAw400text14,),
                 UIHelper.verticalSpace(20.h),
                 Row(
                   children: [
@@ -202,14 +193,9 @@ class _CategoriseScreenState extends State<CategoriseScreen> {
                   ],
                 ),
                 UIHelper.verticalSpace(20.h),
-                GestureDetector(
-                  onTap: (){
-                    NavigationService.navigateTo(Routes.homeDeliveryScreen);
-                  },
-                  child: Container( padding: EdgeInsets.symmetric(vertical: 90.h),
-                    decoration: BoxDecoration(
-                        image: DecorationImage(image: AssetImage(Assets.images.happywek.path))
-                    ),
+                Container( padding: EdgeInsets.symmetric(vertical: 90.h),
+                  decoration: BoxDecoration(
+                      image: DecorationImage(image: AssetImage(Assets.images.happywek.path))
                   ),
                 ),
               ],

@@ -1,4 +1,7 @@
- import 'package:anytimetp_app/constants/text_font_style.dart';
+ import 'package:anytimetp_app/common_widget/custom_food_button_widget.dart';
+import 'package:anytimetp_app/common_widget/custom_textormfield_widget.dart';
+import 'package:anytimetp_app/constants/text_font_style.dart';
+import 'package:anytimetp_app/gen/assets.gen.dart';
 import 'package:anytimetp_app/gen/colors.gen.dart';
 import 'package:anytimetp_app/helpers/all_routes.dart';
 import 'package:anytimetp_app/helpers/navigation_service.dart';
@@ -6,9 +9,7 @@ import 'package:anytimetp_app/helpers/ui_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import '../../../common_widget/custom_food_button_widget.dart';
-import '../../../common_widget/custom_textormfield_widget.dart';
-import '../../../gen/assets.gen.dart';
+
 class LogInScreen extends StatefulWidget {
   const LogInScreen({super.key});
 
@@ -57,7 +58,8 @@ class _LogInScreenState extends State<LogInScreen> {
                       controller: emailController,
                       fillColor: AppColors.cF0F5FA,filled: true,
                       border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(8.r),borderSide: BorderSide.none),
+                        borderRadius: BorderRadius.circular(8.r),
+                          borderSide: BorderSide.none),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(8.r),
                           borderSide: BorderSide.none

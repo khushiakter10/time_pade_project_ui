@@ -30,10 +30,12 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
           children: [
             Row(
               children: [
-                CircleAvatar(
-                  radius: 22.r,
-                  backgroundColor: AppColors.cECF0F4,
-                  child: SvgPicture.asset(Assets.icons.back, height: 45.h),
+                GestureDetector( onTap: (){NavigationService.goBack;},
+                  child: CircleAvatar(
+                    radius: 22.r,
+                    backgroundColor: AppColors.cECF0F4,
+                    child: SvgPicture.asset(Assets.icons.back, height: 45.h),
+                  ),
                 ),
                 UIHelper.horizontalSpace(10.w),
                 Text(

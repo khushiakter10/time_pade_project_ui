@@ -31,10 +31,13 @@ class _SearchScreenState extends State<SearchScreen> {
               children: [
                 Row(
                   children: [
-                    CircleAvatar(
-                      radius: 22.r,
-                      backgroundColor: AppColors.cECF0F4,
-                      child: SvgPicture.asset(Assets.icons.back, height: 45.h),
+                    GestureDetector(
+                      onTap: (){NavigationService.goBack;},
+                      child: CircleAvatar(
+                        radius: 22.r,
+                        backgroundColor: AppColors.cECF0F4,
+                        child: SvgPicture.asset(Assets.icons.back, height: 45.h),
+                      ),
                     ),
                     UIHelper.horizontalSpace(20.w),
                     Text('Search',style: TextFontStyle.headline181C2Ew400text14.copyWith(fontSize: 17.sp)),

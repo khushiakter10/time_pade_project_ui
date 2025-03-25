@@ -312,6 +312,9 @@ class $AssetsIconsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/Back (1).png
+  AssetGenImage get back1 => const AssetGenImage('assets/images/Back (1).png');
+
   /// File path: assets/images/Back.png
   AssetGenImage get back => const AssetGenImage('assets/images/Back.png');
 
@@ -323,6 +326,12 @@ class $AssetsImagesGen {
 
   /// File path: assets/images/Home.png
   AssetGenImage get home => const AssetGenImage('assets/images/Home.png');
+
+  /// File path: assets/images/Mastercard.png
+  AssetGenImage get mastercard => const AssetGenImage('assets/images/Mastercard.png');
+
+  /// File path: assets/images/Profile.png
+  AssetGenImage get profile => const AssetGenImage('assets/images/Profile.png');
 
   /// File path: assets/images/addicon.png
   AssetGenImage get addicon => const AssetGenImage('assets/images/addicon.png');
@@ -359,6 +368,9 @@ class $AssetsImagesGen {
 
   /// File path: assets/images/food.png
   AssetGenImage get food => const AssetGenImage('assets/images/food.png');
+
+  /// File path: assets/images/goalcircle.png
+  AssetGenImage get goalcircle => const AssetGenImage('assets/images/goalcircle.png');
 
   /// File path: assets/images/gold.jpg
   AssetGenImage get gold => const AssetGenImage('assets/images/gold.jpg');
@@ -430,7 +442,7 @@ class $AssetsImagesGen {
   AssetGenImage get withback => const AssetGenImage('assets/images/withback.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [back, close, deleteIcon, home, addicon, bargar, burger, card, chad, chare, cips, circle, colom, compan, dog, food, gold, happywek, holione, holithree, holitwo, icon, imageui, men, pape, phoneCall, picture1, picture2, picture3, picture4, pija, pizza, sent, soundbox, strabery, toptop, upto, vagitable, withback];
+  List<AssetGenImage> get values => [back1, back, close, deleteIcon, home, mastercard, profile, addicon, bargar, burger, card, chad, chare, cips, circle, colom, compan, dog, food, goalcircle, gold, happywek, holione, holithree, holitwo, icon, imageui, men, pape, phoneCall, picture1, picture2, picture3, picture4, pija, pizza, sent, soundbox, strabery, toptop, upto, vagitable, withback];
 }
 
 class $AssetsLottieGen {

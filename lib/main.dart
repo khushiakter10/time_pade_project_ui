@@ -10,7 +10,19 @@ import 'package:get_storage/get_storage.dart';
 import 'package:provider/provider.dart';
 import '/helpers/all_routes.dart';
 import 'constants/app_constants.dart';
-import 'features/card/presentation/mainScreen.dart';
+import 'features/auth/presentation/log_in_screen.dart';
+import 'features/card/presentation/master_card_screen.dart';
+import 'features/card/presentation/payment_method_screen.dart';
+import 'features/card/presentation/traking_screen.dart';
+import 'features/card/presentation/versulscreen.dart';
+import 'features/homedelivery/presentation/burger_screen.dart';
+import 'features/homedelivery/presentation/categorise_screen.dart';
+import 'features/homedelivery/presentation/food_details_screen.dart';
+import 'features/homedelivery/presentation/home_delivery_screen.dart';
+import 'features/homedelivery/presentation/search_screen.dart';
+import 'features/manu/presentation/add_new_adress_screen.dart';
+import 'features/manu/presentation/edit_profile_screen.dart';
+import 'features/timer/presentation/practice.dart';
 import 'gen/colors.gen.dart';
 import 'helpers/di.dart';
 import 'helpers/helper_methods.dart';
@@ -108,7 +120,7 @@ class UtillScreenMobile extends StatelessWidget {
             // },
             navigatorKey: NavigationService.navigatorKey,
             onGenerateRoute: RouteGenerator.generateRoute,
-            home: Mainscreen(),
+            home: Loading(),
           ),
         );
       },

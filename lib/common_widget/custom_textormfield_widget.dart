@@ -1,7 +1,4 @@
-import 'package:anytimetp_app/gen/colors.gen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 class CustomTextFormWiget extends StatelessWidget {
   final TextStyle? textStyle;
   final TextEditingController? controller;
@@ -21,7 +18,6 @@ class CustomTextFormWiget extends StatelessWidget {
   final bool? readOnly;
   final Color? fillColor;
   final  bool?  filled;
-  final BorderRadius? borderRadius;
   const CustomTextFormWiget({
     super.key,
     this.textStyle,
@@ -41,32 +37,27 @@ class CustomTextFormWiget extends StatelessWidget {
     this.readOnly,
     this.scrollController,
     this.fillColor,
-    this.filled, this.borderRadius,
+    this.filled,
   });
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      controller:  controller,
+      controller: controller,
       decoration: InputDecoration(
+        filled: filled,
+        fillColor: fillColor,
+        suffixIcon: suffixIcon,
+        suffixIconColor: suffixIconColor,
+        labelText: labelText,
+        labelStyle: hinStyleColor,
+        prefixIcon: prefixIcon,
+        prefixIconColor: prefixIconColor,
         hintText: hintTxt,
-       hintStyle: hinStyleColor,
-       labelText: labelText,
-       border: OutlineInputBorder(
-           borderRadius: BorderRadius.circular(8.r),
-         borderSide: BorderSide(color: AppColors.mart)
-       ),
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8.r),
-            borderSide: BorderSide(color: AppColors.primaryColor)
-        ),
-        enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8.r),
-            borderSide: BorderSide(color: AppColors.mart)
-        ),
-        errorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8.r),
-            borderSide: BorderSide(color: AppColors.mart),
-        )
+        hintStyle: hinStyleColor,
+        focusedBorder: focusedBorder,
+        enabledBorder: enabledBorder,
+        errorBorder: errorBorder,
+        border: border,
       ),
     );
   }

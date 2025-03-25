@@ -9,13 +9,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class PaymentMethodScreen extends StatefulWidget {
-  const PaymentMethodScreen({super.key});
+class MasterCardScreen extends StatefulWidget {
+  const MasterCardScreen({super.key});
 
   @override
-  State<PaymentMethodScreen> createState() => _PaymentMethodScreenState();
+  State<MasterCardScreen> createState() => _MasterCardScreenState();
 }
-class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
+class _MasterCardScreenState extends State<MasterCardScreen> {
   int selectedIndex = 2;
 
   final List<Map<String, String>> paymentMethods = [
@@ -24,6 +24,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
     {"name": "Mastercard", "image": "assets/images/dog.png"},
     {"name": "Paypal", "image": "assets/images/card.png"},
   ];
+  bool _showCardNumber = false;
 
   @override
   Widget build(BuildContext context) {
@@ -45,11 +46,8 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                   ),
                   UIHelper.horizontalSpace(10.w),
                   Text(
-                    'Payment',
-                    style: TextFontStyle.headline181C2Ew400text14.copyWith(fontSize: 17.sp),
-                  ),
-                ],
-              ),
+                    'Payment',style: TextFontStyle.headline181C2Ew400text14.copyWith(fontSize: 17.sp))]),
+
               UIHelper.verticalSpace(25.h),
               SizedBox(
                 height: 100.h,
@@ -65,21 +63,17 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                       },
                       child: Column(
                         children: [
-                          Container(
-                            margin:  EdgeInsets.symmetric(horizontal: 10.w),
-                            padding:  EdgeInsets.all(10.sp),
+                          Container( margin:  EdgeInsets.symmetric(horizontal: 10.w),padding:  EdgeInsets.all(10.sp),
                             decoration: BoxDecoration(
-                              border: Border.all(
-                                color: selectedIndex == index ? Colors.orange : Colors.transparent,
-                                width: 2.w,
+                              border: Border.all(color: selectedIndex == index ? Colors.orange : Colors.transparent,  width: 2.w,
                               ),
                               borderRadius: BorderRadius.circular(10.r),
                             ),
                             child: Image.asset(paymentMethods[index]['image']!,
                                 width: 50.w, height: 40.h),
                           ),
-                          Text(paymentMethods[index]['name']!,
-                              style:   const TextStyle(color: AppColors.c464E57)),
+                          Text(paymentMethods[index]['name']!,style:   const TextStyle(color: AppColors.c464E57)),
+
                         ],
                       ),
                     );
@@ -87,34 +81,43 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                 ),
               ),
               UIHelper.verticalSpace(20.h),
-              Container(
-                padding: EdgeInsets.all(20.sp),
-                decoration: BoxDecoration(
-                  color: AppColors.cEAECEE,
-                  borderRadius: BorderRadius.circular(8.r),
-                ),
+              Container(padding: EdgeInsets.symmetric(vertical: 7.h,horizontal: 18.w),
+                decoration: BoxDecoration(  color: AppColors.cF4F5F7,   borderRadius: BorderRadius.circular(12.r)),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Image.asset("assets/images/card.png", width: 120.w),
-                    UIHelper.verticalSpace(20.h),
                     Text(
-                      'No master card added',
-                      style: TextFontStyle.headline32343Ew700text14,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.all(23.sp),
-                      child: Text(
-                        'You can add a mastercard and save it for later',
-                        textAlign: TextAlign.center,
-                        style: TextFontStyle.headline676868w400text15,
-                      ),
+                        "Master Card",  style: TextFontStyle.headline32343Ew700text14.copyWith(fontSize: 16.sp)),
+                  UIHelper.verticalSpace(8.h),
+                    Row( mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: [
+                            Image.asset(
+                              Assets.images.mastercard.path,
+                              height: 24.h,
+                            ),
+                            SizedBox(width: 8.w),
+                            Text(
+                                _showCardNumber ? "1234 5678 9012 436" : "**** **** **** 436",
+                                style:  TextFontStyle.headline93949Aw400text16
+                            ),
+                          ],
+                        ),
+                        IconButton(
+                          icon: const Icon(Icons.arrow_drop_down),
+                          onPressed: () {
+                            setState(() {
+                              _showCardNumber = !_showCardNumber;
+                            });
+                          },
+                        ),
+                      ],
                     ),
                   ],
                 ),
-              ),
-              UIHelper.verticalSpace(20.h),
+              ),UIHelper.verticalSpace(20.h),
               GestureDetector(
                 onTap: () {},
                 child: Container(
@@ -137,7 +140,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                   ),
                 ),
               ),
-              UIHelper.verticalSpace(50.h),
+           UIHelper.verticalSpace(210.h),
               Row(
                 children: [
                   Text('Total:',style: TextFontStyle.headlineA0A5BAw400text14),
@@ -148,7 +151,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
               UIHelper.verticalSpace(40.h),
               CustomFoodButtonWidget(titleStyle: TextFontStyle.headlineFFFFFFw700text14,
                   onTap: (){
-                NavigationService.navigateTo(Routes.addCardScreen);
+                    NavigationService.navigateTo(Routes.addCardScreen);
                   }, name: 'Pay & Confirm'),
               UIHelper.verticalSpace(20.h)
             ],

@@ -1,11 +1,13 @@
 import 'package:anytimetp_app/constants/text_font_style.dart';
 import 'package:anytimetp_app/gen/assets.gen.dart';
 import 'package:anytimetp_app/gen/colors.gen.dart';
+import 'package:anytimetp_app/helpers/navigation_service.dart';
 import 'package:anytimetp_app/helpers/ui_helpers.dart';
 import 'package:emoji_picker_flutter/emoji_picker_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../helpers/all_routes.dart';
 import 'widget/message_custom_widget.dart';
 
 class MessageScreen extends StatefulWidget {
@@ -65,7 +67,7 @@ class _MessageScreenState extends State<MessageScreen> {
   }
   @override
   Widget build(BuildContext context) {
-    return    Scaffold(
+    return Scaffold(
       backgroundColor: Colors.white,
       body: Padding(
         padding: const EdgeInsets.all(17.0),
@@ -74,15 +76,19 @@ class _MessageScreenState extends State<MessageScreen> {
             UIHelper.verticalSpace(50.h),
             Row(
               children: [
-                CircleAvatar(
-                    radius: 22.r,
-                    backgroundColor: AppColors.cECF0F4,
-                    child: Image.asset(Assets.images.close.path)
+                GestureDetector( onTap: (){NavigationService.goBack;},
+                  child: CircleAvatar(
+                      radius: 22.r,
+                      backgroundColor: AppColors.cECF0F4,
+                      child: Image.asset(Assets.images.close.path)
+                  ),
                 ),
                 UIHelper.horizontalSpace(10.w),
-                Text(
-                  'Robert Fox',
-                  style: TextFontStyle.headline181C2Ew400text14.copyWith(fontSize: 17.sp),
+                GestureDetector(onTap: (){NavigationService.navigateTo(Routes.orderTrackingScreen);},
+                  child: Text(
+                    'Robert Fox',
+                    style: TextFontStyle.headline181C2Ew400text14.copyWith(fontSize: 17.sp),
+                  ),
                 ),
               ],
             ),

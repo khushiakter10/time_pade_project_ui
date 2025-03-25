@@ -1,13 +1,13 @@
 
+import 'package:anytimetp_app/constants/text_font_style.dart';
+import 'package:anytimetp_app/gen/assets.gen.dart';
+import 'package:anytimetp_app/gen/colors.gen.dart';
 import 'package:anytimetp_app/helpers/all_routes.dart';
 import 'package:anytimetp_app/helpers/navigation_service.dart';
+import 'package:anytimetp_app/helpers/ui_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import '../../../constants/text_font_style.dart';
-import '../../../gen/assets.gen.dart';
-import '../../../gen/colors.gen.dart';
-import '../../../helpers/ui_helpers.dart';
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
 
@@ -26,10 +26,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
           children: [
             Row(
               children: [
-                CircleAvatar(
-                  radius: 22.r,
-                  backgroundColor: AppColors.cECF0F4,
-                  child: SvgPicture.asset(Assets.icons.back, height: 45.h),
+                GestureDetector(
+                  onTap: (){NavigationService.goBack;},
+                  child: CircleAvatar(
+                    radius: 22.r,
+                    backgroundColor: AppColors.cECF0F4,
+                    child: SvgPicture.asset(Assets.icons.back, height: 45.h),
+                  ),
                 ),
                 UIHelper.horizontalSpace(10.w),
                 Text(
@@ -101,6 +104,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text('Full Name',style:  TextFontStyle.headline32343Ew400text13.copyWith(fontSize: 15.sp)),
+
                             Text('Vishal Khadok',style: TextFontStyle.headline646982w400text16.copyWith(fontSize: 13.sp),)
                           ],
                         )

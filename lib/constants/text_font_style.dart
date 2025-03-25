@@ -168,6 +168,9 @@ static final headline676767w400text14=
 static final headline181C2Ew700text16=
   GoogleFonts.rubik(color: AppColors. c181C2E, fontSize: 16.sp, fontWeight: FontWeight.w700);
 
+static final headline181C2Ew800text30=
+  GoogleFonts.rubik(color: AppColors. c181C2E, fontSize: 30.sp, fontWeight: FontWeight.w800);
+
 static final headline181C2Ew400text14=
   GoogleFonts.rubik(color: AppColors. c181C2E, fontSize: 14.sp, fontWeight: FontWeight.w400);
 
@@ -188,5 +191,10 @@ static final headline454850w400text16=
 
 static final headlineABABABw400text12=
   GoogleFonts.rubik(color: AppColors. cABABAB, fontSize: 12.sp, fontWeight: FontWeight.w400);
+static final headline93949Aw400text16=
+  GoogleFonts.rubik(color: AppColors. c93949A, fontSize: 16.sp, fontWeight: FontWeight.w400);
+
+static final headline979797w400text16=
+  GoogleFonts.rubik(color: AppColors. c979797, fontSize: 16.sp, fontWeight: FontWeight.w400);
 
 }

@@ -3,6 +3,8 @@ import 'package:anytimetp_app/features/homedelivery/presentation/widget/custom-f
 import 'package:anytimetp_app/features/homedelivery/presentation/widget/custom_delivery_widget.dart';
 import 'package:anytimetp_app/features/homedelivery/presentation/widget/custom_chiken_widget.dart';
 import 'package:anytimetp_app/gen/colors.gen.dart';
+import 'package:anytimetp_app/helpers/all_routes.dart';
+import 'package:anytimetp_app/helpers/navigation_service.dart';
 import 'package:anytimetp_app/helpers/ui_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -43,22 +45,28 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
           children: [
             Row(
               children: [
-                CircleAvatar(
-                  radius: 22.r,
-                  backgroundColor: AppColors.cECF0F4,
-                  child: SvgPicture.asset(Assets.icons.back, height: 45.h),
+                GestureDetector(onTap: (){NavigationService.goBack;},
+                  child: CircleAvatar(
+                    radius: 22.r,
+                    backgroundColor: AppColors.cECF0F4,
+                    child: SvgPicture.asset(Assets.icons.back, height: 45.h),
+                  ),
                 ),
                 UIHelper.horizontalSpace(20.w),
-                Text(
-                  'Details',
-                  style: TextFontStyle.headline181C2Ew400text14.copyWith(fontSize: 17.sp),
+                GestureDetector(onTap: (){NavigationService.navigateTo(Routes.searchScreen);},
+                  child: Text(
+                    'Details',
+                    style: TextFontStyle.headline181C2Ew400text14.copyWith(fontSize: 17.sp),
+                  ),
                 ),
               ],
             ),
             UIHelper.verticalSpace(20.h),
-            CustomFavoriteWidget(
-              borderRadius: 22.r,
-              imageProvider: AssetImage(Assets.images.vagitable.path),
+            GestureDetector(onTap: (){NavigationService.navigateTo(Routes.searchScreen);},
+              child: CustomFavoriteWidget(
+                borderRadius: 22.r,
+                imageProvider: AssetImage(Assets.images.vagitable.path),
+              ),
             ),
             UIHelper.verticalSpace(20.h),
             Row(
