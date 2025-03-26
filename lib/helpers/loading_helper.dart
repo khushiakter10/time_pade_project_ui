@@ -1,6 +1,4 @@
 
-import 'package:flutter/material.dart';
-import '../gen/assets.gen.dart';
 
 import 'navigation_service.dart';
 

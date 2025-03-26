@@ -336,6 +336,12 @@ class $AssetsImagesGen {
   /// File path: assets/images/addicon.png
   AssetGenImage get addicon => const AssetGenImage('assets/images/addicon.png');
 
+  /// File path: assets/images/apple.jpg
+  AssetGenImage get apple => const AssetGenImage('assets/images/apple.jpg');
+
+  /// File path: assets/images/apple2.webp
+  AssetGenImage get apple2 => const AssetGenImage('assets/images/apple2.webp');
+
   /// File path: assets/images/bargar.png
   AssetGenImage get bargar => const AssetGenImage('assets/images/bargar.png');
 
@@ -393,6 +399,9 @@ class $AssetsImagesGen {
   /// File path: assets/images/imageui.jpg
   AssetGenImage get imageui => const AssetGenImage('assets/images/imageui.jpg');
 
+  /// File path: assets/images/istockphoto-184276818-612x612.jpg
+  AssetGenImage get istockphoto184276818612x612 => const AssetGenImage('assets/images/istockphoto-184276818-612x612.jpg');
+
   /// File path: assets/images/men.png
   AssetGenImage get men => const AssetGenImage('assets/images/men.png');
 
@@ -442,7 +451,7 @@ class $AssetsImagesGen {
   AssetGenImage get withback => const AssetGenImage('assets/images/withback.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [back1, back, close, deleteIcon, home, mastercard, profile, addicon, bargar, burger, card, chad, chare, cips, circle, colom, compan, dog, food, goalcircle, gold, happywek, holione, holithree, holitwo, icon, imageui, men, pape, phoneCall, picture1, picture2, picture3, picture4, pija, pizza, sent, soundbox, strabery, toptop, upto, vagitable, withback];
+  List<AssetGenImage> get values => [back1, back, close, deleteIcon, home, mastercard, profile, addicon, apple, apple2, bargar, burger, card, chad, chare, cips, circle, colom, compan, dog, food, goalcircle, gold, happywek, holione, holithree, holitwo, icon, imageui, istockphoto184276818612x612, men, pape, phoneCall, picture1, picture2, picture3, picture4, pija, pizza, sent, soundbox, strabery, toptop, upto, vagitable, withback];
 }
 
 class $AssetsLottieGen {
